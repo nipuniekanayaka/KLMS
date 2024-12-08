@@ -1,0 +1,248 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #dfdfdd;
+    border-bottom: 2px solid #ccc;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header h1 {
+    float: left;
+    color: #797171ce;
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative; /* Ensures proper positioning of the dropdown */
+    margin-left: 10px;
+}
+
+nav ul li a {
+    color: #070606;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding: 10px 15px;
+}
+
+/* Dropdown Menu Styles */
+nav ul li.dropdown {
+    position: relative;
+}
+
+nav ul li.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.auth-buttons {
+    display: flex;
+}
+
+.auth-buttons .login-btn, .signup-btn {
+    background-color: #FF5A5F;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* Position dropdown directly below the parent item */
+    left: 0;
+    background: #ffcc00;
+    min-width: 200px; /* Ensure it's wide enough to show all items */
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 9999; /* High z-index to ensure it is above other content */
+    padding: 0;
+}
+
+/* Style dropdown items */
+.dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* Change background on hover */
+.dropdown-content a:hover {
+    background-color: #ff9900;
+}
+
+/* Ensure chevrons are correctly aligned */
+.fas.fa-chevron-down {
+    margin-left: 5px;
+}
+
+.hero {
+    background: url('images/hero_background.jpg') no-repeat center center/cover;
+    color: #fff;
+    height: 200px;
+    position: relative;
+    overflow: hidden; /* Ensure icons do not overflow */
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1; /* Ensure hero text is above background elements */
+}
+
+.hero h2 {
+    margin-top: 5px; /* Fixed margin-top */
+    font-size: 3em;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.hero p {
+    font-size: 1.5em;
+}
+
+.animated-icons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Ensure icons are below the hero text */
+    overflow: hidden;
+}
+
+.animated-icons i {
+    position: absolute;
+    font-size: 2em;
+    opacity: 0.7;
+    animation: float 10s infinite ease-in-out, rotate 20s infinite linear;
+    transition: transform 0.5s ease-in-out, bottom 0.5s ease-in-out;
+}
+
+.animated-icons i:nth-child(1) { left: 10%; animation-delay: 0s; }
+.animated-icons i:nth-child(2) { left: 30%; animation-delay: 2s; }
+.animated-icons i:nth-child(3) { left: 50%; animation-delay: 4s; }
+.animated-icons i:nth-child(4) { left: 70%; animation-delay: 6s; }
+.animated-icons i:nth-child(5) { left: 90%; animation-delay: 8s; }
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.animated-icons i:hover {
+    animation: bounce 1s ease-in-out;
+    transform: translateY(-20px) scale(1.2); /* Move up and slightly increase scale */
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0) scale(1); }
+    20% { transform: translateY(-30px) scale(1.1); }
+    40% { transform: translateY(0) scale(1.1); }
+    60% { transform: translateY(-15px) scale(1.1); }
+    80% { transform: translateY(0) scale(1.1); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+.modules {
+    background: #f4f4f4;
+    padding: 50px 0;
+}
+
+.module-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+/* Style the clickable module boxes */
+.module {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    width: 18%;
+    display: block; /* Ensure the module behaves like a block-level element for clicking */
+    text-decoration: none; /* Remove default link underline */
+    color: #333; /* Ensure text color is appropriate */
+}
+
+.module:hover {
+    background: #f0f0f0; /* Change background on hover to indicate it's clickable */
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2); /* Add shadow for better visual effect */
+}
+
+.module i {
+    font-size: 2em;
+    color: #ffcc00;
+}
+
+.module h3 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.module p {
+    font-size: 1em;
+    color: #666;
+}
+
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    margin-top: 5px;
+    
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+footer ul li {
+    margin: 0 10px;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+}
